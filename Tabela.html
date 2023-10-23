@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Tabela.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Tabela</title>
+  <style>
+    /* Estilos adicionais para as tabelas */
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <h1>Stardew</h1>
+    </div>
+    <a class="btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <div class="menu">
+      <a href="pagina_inicial.html">Home</a>
+      <a href="Graficos.html">Graficos</a>
+      <a href="Tabela.html">Tabela</a>
+    </div>
+  </div>
+  <center>
+    <div id="tables-container">
+      <!-- As tabelas serão inseridas aqui -->
+    </div>
+  </center>
+  <script>
+    function fetchData() {
+      const nome1 = ['Luz Ambiente',
+        'Temperatura Ar',
+        'Temperatura Solo',
+        'Umidade Ar',
+        'Umidade Solo',
+        'Vento Velocidade',
+        'Altura']
+      let i = 0;
+      fetch('https://nodemongo-sigma.vercel.app/getData')
+        .then(response => response.json())
+        .then(data => {
+
+          for (let j = 1; j <= 9; j++) {
+
+            if (j !== 2 && j !== 7) {
+              nome = nome1[i];
+              i++;
+              const dataColumn = data['values' + j];
+              const media = calcularMedia(dataColumn);
+              const desvioPadrao = calcularDesvioPadrao(dataColumn, media);
+              const variancia = calcularVariancia(dataColumn, media);
+              const maximo = Math.max(...dataColumn);
+              const minimo = Math.min(...dataColumn);
+              const ultimoDado = dataColumn[dataColumn.length - 1];
+
+              const table = criarTabela(media, desvioPadrao, variancia, maximo, minimo, nome, ultimoDado);
+
+              document.getElementById('tables-container').appendChild(table);
+            }
+          }
+        })
+        .catch(error => {
+          console.error('Erro ao buscar dados:', error);
+        });
+    }
+
+    // Função para calcular a média de uma array de números
+    function calcularMedia(arr) {
+      return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+    }
+
+    // Função para calcular o desvio padrão de uma array de números
+    function calcularDesvioPadrao(arr, media) {
+      const somaQuadrados = arr.reduce((acc, curr) => acc + (curr - media) ** 2, 0);
+      return Math.sqrt(somaQuadrados / arr.length);
+    }
+
+    // Função para calcular a variância de uma array de números
+    function calcularVariancia(arr, media) {
+      return arr.reduce((acc, curr) => acc + (curr - media) ** 2, 0) / arr.length;
+    }
+
+    // Função para criar uma tabela com estatísticas
+    function criarTabela(media, desvioPadrao, variancia, maximo, minimo, nome, ultimoDado) {
+      const table = document.createElement('table');
+      const tbody = document.createElement('tbody');
+
+      const headersRow = document.createElement('tr');
+      headersRow.innerHTML = `
+        <th>${nome}</th>
+      `;
+
+      tbody.appendChild(headersRow);
+
+      const addRow = (name, value) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${name}</td>
+          <td>${value}</td>
+        `;
+        tbody.appendChild(row);
+      };
+
+      addRow('Media', media);
+      addRow('Desvio Padrao', desvioPadrao);
+      addRow('Variancia', variancia);
+      addRow('Valor Maximo', maximo);
+      addRow('Valor Minimo', minimo);
+      addRow('Ultimo Dado', ultimoDado);
+
+      table.appendChild(tbody);
+
+      return table;
+    }
+
+    // Atualize os dados a cada 10 segundos
+
+
+    // Chame a função fetchData para carregar os dados inicialmente
+    fetchData();
+  </script>
+
+  <script type="text/javascript">
+    $(".btn").on("click", function () {
+      $('.menu').toggleClass("show");
+    });
+  </script>
+</body>
+
+</html>
