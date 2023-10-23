@@ -223,7 +223,7 @@
       data: {
         labels: ['Norte', 'Leste', 'Sul', 'Oeste'],
         datasets: [{
-          label: 'Direção do Vento (m/s)',
+          label: 'Direção do Vento (s)',
           data: [dir_norte, dir_sul, dir_leste, dir_oeste],
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
@@ -284,7 +284,6 @@
           const comp = data.labels7.slice(-maxwind);
           console.log(data1);
 
-          // Função para verificar se dois arrays de strings são iguais
           function arraysAreEqual(arr1, arr2) {
             if (arr1.length !== arr2.length) {
               return false;
