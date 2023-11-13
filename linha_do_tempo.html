@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="linha_do_tempo.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Stardew</h1>
+        </div>
+
+        <a class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="menu">
+            <a href="pagina_inicial.html">Home</a>
+            <a href="Graficos.html">Graficos</a>
+            <a href="Tabela.html">Tabela</a>
+            <a href="linha_do_tempo.html">Blog</a>
+        </div>
+
+    </div>
+    <center>
+        <div class="linha">
+            <h2 class="date-title" onclick="showText('text1')">26 de agosto de 2023</h2>
+            <p class="text-display" id="text1">Formação da equipe para o projeto e testagem inicial do material
+                inicialmente disponível. Delegação inicial de funções de cada integrante da equipe e divisão das
+                primeiras atividades.</p>
+
+            <h2 class="date-title" onclick="showText('text2')">27 de agosto de 2023</h2>
+            <p class="text-display" id="text2">Realização da pesquisa dos insumos eletrônicos necessários para a
+                realização do projeto.</p>
+
+            <h2 class="date-title" onclick="showText('text3')">28 de agosto de 2023</h2>
+            <p class="text-display" id="text3">Foi projetado de forma manuscrita o primeiro diagrama mecânico e
+                eletrônico relacionado ao Stardew. Foi feita a análise do material mecânico inicial disponível para uso.
+                Foi gravado o primeiro vídeo de apresentação da ideia inicial do projeto, listando os materiais
+                necessários e explicando nossa proposta.</p>
+
+            <h2 class="date-title" onclick="showText('text4')">4 de setembro de 2023</h2>
+            <p class="text-display" id="text4">Foi levantado o orçamento de todos os materiais necessários para a
+                realização do protótipo.</p>
+
+            <h2 class="date-title" onclick="showText('text5')">5 de setembro de 2023</h2>
+            <p class="text-display" id="text5">Atualização das funções de cada integrante do grupo devido ao aumento do
+                número de requisições.</p>
+
+            <h2 class="date-title" onclick="showText('text6')">6 de setembro de 2023</h2>
+            <p class="text-display" id="text6">Estabelecimento do padrão de postagem do blog. Comparação dos preços de
+                fornecedores para melhoria de orçamento.</p>
+
+            <h2 class="date-title" onclick="showText('text7')">10 de setembro de 2023</h2>
+            <p class="text-display" id="text7">Entrega da primeira versão do relatório. Escrita técnica das
+                especificações de cada sensor. Planejamento de apresentação. Atualização do orçamento.</p>
+
+            <h2 class="date-title" onclick="showText('text8')">11 de setembro de 2023</h2>
+            <p class="text-display" id="text8">Apresentação dos resultados alcançados no desenvolvimento do protótipo
+                (Celso Portioli é inocente).</p>
+
+            <h2 class="date-title" onclick="showText('text9')">12 de setembro de 2023</h2>
+            <p class="text-display" id="text9">Atualização do orçamento.</p>
+
+            <h2 class="date-title" onclick="showText('text10')">15 de setembro de 2023</h2>
+            <p class="text-display" id="text10">Foi realizada a visita em uma fazenda responsável pelo cultivo,
+                tratamento e exportação de cogumelos medicinais.</p>
+
+            <h2 class="date-title" onclick="showText('text11')">17 de setembro de 2023</h2>
+            <p class="text-display" id="text11">Foi realizada a criação da apresentação da TechnoFarm, demonstrando seu
+                protótipo Stardew.</p>
+
+            <h2 class="date-title" onclick="showText('text12')">18 de setembro de 2023</h2>
+            <p class="text-display" id="text12">Foi feita a lista de compras dos insumos necessários, escolhendo os
+                melhores fornecedores.</p>
+
+            <h2 class="date-title" onclick="showText('text13')">19 de setembro de 2023</h2>
+            <p class="text-display" id="text13">Foi realizada a compra de todos os insumos, mecânicos e eletrônicos,
+                necessários para o projeto.</p>
+
+            <h2 class="date-title" onclick="showText('text14')">20 de setembro de 2023</h2>
+            <p class="text-display" id="text14">Foi projetado o design inicial para o site. Recebimento de parte dos
+                insumos eletrônicos, incluindo o principal componente, o esp32. Codificação do login via WiFi e criação
+                do JSON.</p>
+
+            <h2 class="date-title" onclick="showText('text15')">22 de setembro de 2023</h2>
+            <p class="text-display" id="text15">Recebimento dos insumos eletrônicos restantes.</p>
+
+            <h2 class="date-title" onclick="showText('text16')">23 de setembro de 2023</h2>
+            <p class="text-display" id="text16">Programação da página que conecta o MongoDB ao site.</p>
+
+            <h2 class="date-title" onclick="showText('text17')">25 de setembro de 2023</h2>
+            <p class="text-display" id="text17">Testagem do Código inicial. Realizada a configuração dos certificados e
+                protocolos de segurança para acesso ao servidor e ao banco de dados. Planejamento técnico das
+                tecnologias de hospedagem a serem utilizadas.</p>
+
+            <h2 class="date-title" onclick="showText('text18')">26 de setembro de 2023</h2>
+            <p class="text-display" id="text18">Atualização do design e programação do FrontEnd inicial. Testagem dos
+                componentes eletrônicos.</p>
+
+            <h2 class="date-title" onclick="showText('text19')">29 de setembro de 2023</h2>
+            <p class="text-display" id="text19">Realizada a criação da base para os sensores proprietários.</p>
+
+            <h2 class="date-title" onclick="showText('text20')">1 de outubro de 2023</h2>
+            <p class="text-display" id="text20">Criação do primeiro protótipo mecânico usando sucata.</p>
+
+            <h2 class="date-title" onclick="showText('text21')">3 de outubro de 2023</h2>
+            <p class="text-display" id="text21">Solda de pinos nos sensores.</p>
+
+            <h2 class="date-title" onclick="showText('text22')">6 de outubro de 2023</h2>
+            <p class="text-display" id="text22">Testagem dos sensores que foram soldados manualmente. Iniciado a
+                modelagem do protótipo em três dimensões, através do AutoCad.</p>
+
+            <h2 class="date-title" onclick="showText('text23')">7 de outubro de 2023</h2>
+            <p class="text-display" id="text23">Criação de uma reprodução milimétrica do sensor em 3D. Modelagem em 3D
+                da estrutura do receptor de vento.</p>
+
+            <h2 class="date-title" onclick="showText('text24')">8 de outubro de 2023</h2>
+            <p class="text-display" id="text24">Finalização da modelagem em 3D do protótipo por completo.</p>
+
+            <h2 class="date-title" onclick="showText('text25')">9 de outubro de 2023</h2>
+            <p class="text-display" id="text25">Delegação de novas funções e responsabilidades de cada integrante do
+                grupo.</p>
+
+            <h2 class="date-title" onclick="showText('text26')">10 de outubro de 2023</h2>
+            <p class="text-display" id="text26">Foi criado um diagrama para o caso da construção da estrutura usando
+                madeira.</p>
+
+            <h2 class="date-title" onclick="showText('text27')">12 de outubro de 2023</h2>
+            <p class="text-display" id="text27">Criação de protótipo de estrutura usando madeira.</p>
+
+            <h2 class="date-title" onclick="showText('text28')">13 de outubro de 2023</h2>
+            <p class="text-display" id="text28">Criação de protótipo de estrutura usando peças de LEGO. Criação dos
+                receptores de vento usando material reciclado. Entrega da segunda versão do relatório.</p>
+
+            <h2 class="date-title" onclick="showText('text29')">14 de outubro de 2023</h2>
+            <p class="text-display" id="text29">Montagem de protótipo completo, usando estrutura mecânica de sucata,
+                receptores de vento de material reciclado e estrutura base com peças de LEGO.</p>
+
+            <h2 class="date-title" onclick="showText('text30')">15 de outubro de 2023</h2>
+            <p class="text-display" id="text30">Programado o código para envio de dados diretamente ao MongoDB.</p>
+
+            <h2 class="date-title" onclick="showText('text31')">16 de outubro de 2023</h2>
+            <p class="text-display" id="text31">Início da Integração dos códigos. Estruturação do banco de dados MongoDB
+                e suas coleções.</p>
+
+            <h2 class="date-title" onclick="showText('text32')">17 de outubro de 2023</h2>
+            <p class="text-display" id="text32">Codificação das funções referentes à ciência de dados, incluindo
+                cálculos estatísticos e features do sistema.</p>
+
+            <h2 class="date-title" onclick="showText('text33')">18 de outubro de 2023</h2>
+            <p class="text-display" id="text33">Finalização da integração dos códigos, dispositivo, servidor, banco de
+                dados e site. Realizada a conexão remota, que pode ser realizada independentemente da localização do
+                dispositivo.</p>
+
+            <h2 class="date-title" onclick="showText('text34')">20 de outubro de 2023</h2>
+            <p class="text-display" id="text34"> Montagem da estrutura e da caixa onde será armazenado o dispositivo.
+                Montagem do roteiro e apresentação do dispositivo.</p>
+
+        </div>
+    </center>
+
+    <script>
+        function showText(textId) {
+            const textDisplay = document.getElementById(textId);
+
+            if (textDisplay.style.display === 'none' || textDisplay.style.display === '') {
+                // Se o texto estiver oculto, exibe
+                textDisplay.style.display = 'block';
+            } else {
+                // Se o texto estiver visível, oculta
+                textDisplay.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
